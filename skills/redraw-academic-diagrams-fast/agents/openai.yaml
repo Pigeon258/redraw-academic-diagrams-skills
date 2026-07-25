@@ -1,0 +1,4 @@
+interface:
+  display_name: "科研图极速可编辑重绘"
+  short_description: "优先缩短首轮交付时间并生成便于继续修改的科研图工作版本"
+  default_prompt: "Use $redraw-academic-diagrams-fast 将我提供的科研架构图、流程图或系统图快速重绘为易编辑的 Microsoft PowerPoint；优先缩短首轮交付时间，列出简单修复项并支持后续迭代。"

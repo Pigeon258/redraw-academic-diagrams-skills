@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+Thumbs.db
+*.pptx
+*.png
+*.jpg
+*.jpeg
+*.jsonl
+evaluation/summary.json

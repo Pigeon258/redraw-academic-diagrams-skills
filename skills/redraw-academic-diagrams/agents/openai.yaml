@@ -1,0 +1,4 @@
+interface:
+  display_name: "可编辑科研图重绘"
+  short_description: "将不可编辑科研图重绘为易修改的 PowerPoint"
+  default_prompt: "Use $redraw-academic-diagrams 将我提供的科研架构图、流程图或系统图重绘为易编辑的 Microsoft PowerPoint，并按照语义、SVG、分组、连接符和时间成本规则执行。"

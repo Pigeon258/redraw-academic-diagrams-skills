@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Synthetic academic workflow reference</title>
+  <desc id="desc">Three editable-target modules connected from input through processing to output.</desc>
+  <rect width="960" height="540" fill="#ffffff"/>
+  <text x="480" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#163a67">Synthetic Research Workflow</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="80" y="190" width="220" height="150" rx="24" fill="#eef5ff" stroke="#3976c5" stroke-width="4"/>
+    <text x="190" y="245" text-anchor="middle" font-size="28" font-weight="700" fill="#163a67">Input</text>
+    <text x="190" y="290" text-anchor="middle" font-size="20" fill="#34495e">Signals and metadata</text>
+    <rect x="370" y="190" width="220" height="150" rx="24" fill="#effaf4" stroke="#2f9b65" stroke-width="4"/>
+    <text x="480" y="245" text-anchor="middle" font-size="28" font-weight="700" fill="#17633e">Processing</text>
+    <text x="480" y="290" text-anchor="middle" font-size="20" fill="#34495e">Normalize and fuse</text>
+    <rect x="660" y="190" width="220" height="150" rx="24" fill="#fff7e8" stroke="#d99020" stroke-width="4"/>
+    <text x="770" y="245" text-anchor="middle" font-size="28" font-weight="700" fill="#8a5600">Output</text>
+    <text x="770" y="290" text-anchor="middle" font-size="20" fill="#34495e">Prediction and report</text>
+  </g>
+  <g fill="none" stroke="#23374d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M300 265H355"/>
+    <path d="M340 250L355 265L340 280"/>
+    <path d="M590 265H645"/>
+    <path d="M630 250L645 265L630 280"/>
+  </g>
+</svg>
