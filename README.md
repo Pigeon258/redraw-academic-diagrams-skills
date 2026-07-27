@@ -15,7 +15,7 @@ An explicit user selection always wins. Without one, a hard time budget of 30 mi
 
 Every prototype, partial build, review copy, and pre-freeze candidate remains `WORKING DRAFT`. Only the frozen candidate with matching PPTX, preview, evidence, and applicable checks may be presented as the final adoptable version.
 
-Current version: **1.1.0**
+Current version: **1.2.0**
 
 ### `redraw-academic-diagrams-fast`
 

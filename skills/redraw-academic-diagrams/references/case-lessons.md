@@ -45,6 +45,10 @@ Cross-module connectors stay outside endpoint module groups and may bind to stab
 
 Mixing polished SVG icons with hand-built semantic clocks, gauges, cameras, or routers makes the diagram visibly inconsistent. Once SVG is adopted, select one compatible family for all semantic icons.
 
+## The local SVG library is a starting point, not a closed world
+
+A local asset can be technically validated and still be a weaker semantic match than a license-clear online icon. Search both spaces within the time box, compare meaning before style, and promote an online asset only when it is reusable, traceable, classified, and PowerPoint-validated.
+
 ## Similar appearance can carry the wrong concept
 
 An icon may be visually neat but semantically wrong. Examples include a GPU substituted for a camera, a horizontal bar chart substituted for a column chart, or a routing icon missing its central node or directional arrows. Verify the intended concept before judging style.
@@ -56,6 +60,12 @@ A small bar-chart symbol may be an atomic concept icon and therefore SVG, while 
 ## Composite SVG overlays need opaque masks
 
 A valid clock or check SVG can still expose base-icon strokes through its circular overlay. Put an opaque plate matching the card background behind the overlay, group the composition, and inspect at enlarged scale after save/reopen.
+
+## Collision repair must preserve semantic ownership
+
+Moving a label or icon away from a solid line can remove the visible overlap while changing which region or module appears to own it. Before relocating semantic content, inspect region, module, submodule, and handoff boundaries as adjustable variables. Prefer a boundary or spacing change that keeps the content adjacent to the concept it explains.
+
+Full-page review can hide small line intersections, and a local edit can create defects in an adjacent area that was treated as unchanged. Review the edited area plus neighboring boundary strips at 200–300% equivalent zoom and add a task-specific geometry regression when the collision is repeatable.
 
 ## Fast delivery cannot silently remove the asset gate
 

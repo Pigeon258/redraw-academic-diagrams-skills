@@ -110,6 +110,18 @@ def validate_skill_lifecycle() -> list[str]:
     main_quality = (main_root / "references" / "quality-gates.md").read_text(
         encoding="utf-8-sig"
     )
+    main_product = (main_root / "references" / "product-rules.md").read_text(
+        encoding="utf-8-sig"
+    )
+    main_svg = (main_root / "references" / "svg-assets.md").read_text(
+        encoding="utf-8-sig"
+    )
+    main_element_index_path = main_root / "references" / "element-index.md"
+    main_element_index = (
+        main_element_index_path.read_text(encoding="utf-8-sig")
+        if main_element_index_path.is_file()
+        else ""
+    )
     main_manifest_script = (main_root / "scripts" / "build_qa_manifest.py").read_text(
         encoding="utf-8-sig"
     )
@@ -134,6 +146,20 @@ def validate_skill_lifecycle() -> list[str]:
         errors.append(f"主版本缺少 WORKING DRAFT 生命周期：{MAIN_SKILL}")
     if "UNVERIFIED DRAFT" in lifecycle_text:
         errors.append(f"主版本仍包含废弃的独立草稿状态：{MAIN_SKILL}")
+    if "references/element-index.md" not in main_skill or not main_element_index:
+        errors.append(f"主版本缺少推荐元素索引规则：{MAIN_SKILL}")
+    if (
+        "solid container borders" not in main_product
+        or "no boundary level is inherently fixed" not in main_product
+        or "200–300%" not in main_quality
+    ):
+        errors.append(f"主版本缺少语义安全的边界碰撞规则：{MAIN_SKILL}")
+    if (
+        "local library and online sources" not in main_svg
+        or "Local library promotion" not in main_svg
+        or "semantic category" not in main_svg
+    ):
+        errors.append(f"主版本缺少本地与在线 SVG 搜索及资产分类规则：{MAIN_SKILL}")
     if "RETIRED / PAUSED" not in retired_skill:
         errors.append(f"fast 归档缺少停更停用标记：{RETIRED_SKILL}")
     if "allow_implicit_invocation: false" not in retired_agents:

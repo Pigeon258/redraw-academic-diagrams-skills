@@ -26,6 +26,7 @@ Target Microsoft PowerPoint. Do not claim WPS compatibility unless the user expl
 7. Batch high-impact semantic questions; continue independent regions while waiting.
 8. Use compact working notes. Inventory every visible semantic relationship by source, target, direction, level, and connector shape, but do not separately inventory decorative micro-elements unless they affect layout.
 9. Build one candidate path. Do not create alternatives unless the user requests them or the current method fails.
+10. For iterative review or handoff, create or update the recommended element index described in [references/element-index.md](references/element-index.md).
 
 Read [references/workflow.md](references/workflow.md) and [references/product-rules.md](references/product-rules.md) before decomposing a new diagram.
 
@@ -59,12 +60,14 @@ Skip W2 only when the same method has reliable historical evidence. In `FAST`, p
 - Keep text, containers, data structures, relationships, and changeable geometry as native objects.
 - Use SVG for atomic icons whose internal structure a later editor will not modify.
 - Once a page adopts SVG icons, use SVG for every semantic icon and keep one compatible visual family.
+- When selecting an SVG, treat the local asset library and license-clear online sources as one candidate space. A validated exact local match may be used immediately; otherwise perform a bounded online comparison and record the selection or promotion decision.
 - `FAST` does not waive the applicable SVG/asset gate. If compliant atomic SVG icons cannot be completed within the cap, keep the result `WORKING DRAFT` instead of silently hand-drawing them or claiming `PASS`.
 - Do not replace editable charts or per-bar/per-node structures with screenshots or monolithic SVG.
 - Group each semantic module for whole-module movement while preserving useful group-internal editing.
 - Keep cross-module connectors outside individual module groups.
 - Make every visible arrow a native connector or arrow line.
 - Preserve every confirmed region-level and module-level relationship; never remove an explicit arrow merely because another nearby connector looks redundant.
+- Do not let text or icons intersect solid borders, dividers, or relationship lines. Repair the collision without changing semantic ownership, adjacency, or handoff meaning; boundaries at every hierarchy level are adjustable layout variables, not fixed conditions.
 - Never create a visible arrow from a line plus an independent triangle or `__head` shape.
 - Represent one continuous folded, feedback, or routed relationship with one native elbow connector.
 - Leave a connector unbound when binding harms the intended straight route, but never simulate one relationship with several lines.
@@ -85,10 +88,11 @@ Skip W2 only when the same method has reliable historical evidence. In `FAST`, p
 ## Read References Conditionally
 
 - Read [references/svg-assets.md](references/svg-assets.md) when the diagram contains icons or external assets.
+- Read [references/element-index.md](references/element-index.md) when the user needs stable module identifiers, iterative feedback vocabulary, or an editor handoff.
 - Read [references/powerpoint-structure.md](references/powerpoint-structure.md) before implementing grouping, connectors, charts, layers, or PowerPoint-specific object behavior.
 - Read [references/quality-gates.md](references/quality-gates.md) before W5 and when evaluating an existing redraw.
 - Read [references/cost-and-stop.md](references/cost-and-stop.md) when the user emphasizes speed, sets a time cap, or the estimate risks overrun.
-- Read [references/case-lessons.md](references/case-lessons.md) when handling `noGrp`, connector binding, elbow routing, mixed icon systems, composite-icon overlap, uncertain icon concepts, or a human-adjusted example.
+- Read [references/case-lessons.md](references/case-lessons.md) when handling `noGrp`, connector binding, elbow routing, mixed icon systems, composite-icon overlap, icon/text line collisions, uncertain icon concepts, or a human-adjusted example.
 
 Do not load every reference unconditionally.
 

@@ -24,6 +24,8 @@ Split the page into regions, semantic modules, internal elements, text, icons, c
 
 Create a relationship inventory before construction. For every visible arrow record source, target, direction, region-level or module-level ownership, and straight/elbow/bidirectional form. Do not collapse an explicit region transition into nearby module connectors without user confirmation.
 
+For feedback-heavy work, assign stable hierarchical IDs and prepare the recommended element index in `element-index.md`. Keep the index aligned with semantic ownership and PowerPoint object names.
+
 G1 passes for a region when its core semantics, main text, relationships, and object representations are known. Confirm or explicitly record every high-impact ambiguity.
 
 ### W2 — High-risk prototype
@@ -36,9 +38,9 @@ G2 passes when one method works in real PowerPoint, supports the required editin
 
 ### W3 — Assets and modules
 
-Apply one page-level style contract. Search and normalize SVG assets, record sources, create native chart/data elements, group module internals, and name important objects.
+Apply one page-level style contract. Search the local asset library and bounded license-clear online sources, normalize SVG assets, record sources, create native chart/data elements, group module internals, and name important objects.
 
-In `FAST`, use this asset order: verified same-family SVG, short license-clear search, simple same-family custom SVG, confirmed near-meaning substitute, then user decision for high-impact ambiguity. Stop when a contract-satisfying option exists.
+In `FAST`, scan the local library first and run a short online comparison when the local result is not an exact validated match. Then use this order: verified same-family SVG, license-clear online SVG, simple same-family custom SVG, confirmed near-meaning substitute, then user decision for high-impact ambiguity. Stop when a contract-satisfying option exists.
 
 G3 passes when a module is semantically correct enough to integrate, moves as one unit, permits intended internal edits, has no known lock or placeholder, and uses compliant assets.
 
@@ -46,13 +48,13 @@ G3 passes when a module is semantically correct enough to integrate, moves as on
 
 Place modules, create cross-module relationships, decide connector binding, set layers, align spacing, name page-level objects, and check canvas bounds.
 
-Integrate one candidate path. Normalize region boundaries, spacing, typography, color, line weight, and icon scale in one page-level pass. Do not regenerate acceptable regions or create alternatives unless the user requests them or the method fails.
+Integrate one candidate path. Normalize region boundaries, spacing, typography, color, line weight, and icon scale in one page-level pass. Treat region, module, submodule, and handoff boundaries as adjustable layout variables while preserving semantic ownership. Do not regenerate acceptable regions or create alternatives unless the user requests them or the method fails.
 
 G4 passes when required modules and relationships are complete, semantic modules move correctly, cross-module connectors remain outside module groups, and the page is complete enough for integrated evaluation.
 
 ### W5 — QA and targeted repair
 
-Run deterministic checks, representative PowerPoint edit tasks, semantic checks, visual review, asset checks, and one integrated review. Compare the final connector inventory against the confirmed source/target/direction list at both region and module level. Repair by impact and recheck only affected scope.
+Run deterministic checks, representative PowerPoint edit tasks, semantic checks, visual review, asset checks, and one integrated review. Compare the final connector inventory against the confirmed source/target/direction list at both region and module level. Inspect edited areas and their adjacent boundary strips at enlarged scale for text/icon intersections with solid lines. Repair by impact and recheck only affected scope.
 
 `DEFAULT` runs every applicable strict check and targets stable formal `PASS`. `FAST` combines the applicable minimum checks into one pass, stops optional polish and repeated full-deck review, and still runs every applicable hard gate, P1 check, representative core edit, PowerPoint open/save/reopen, and candidate-preview identity check.
 
@@ -92,15 +94,15 @@ G7 passes when the agreed feedback round is complete, affected scope is rechecke
 
 - W1 defines concept, family, license, and time requirements.
 - W2 validates high-risk assets.
-- W3 performs main search, filtering, normalization, and source recording.
+- W3 searches local and online candidates, filters and normalizes them, records provenance, and decides whether a reusable online asset should enter the local library.
 - W5 only replaces failed assets.
 - W7 returns new asset requests to W3.
 
 ## Human confirmation
 
-Confirm high-impact semantics, relationship direction, near-meaning icon substitutions, structure-changing layout, license risk, budget overrun, scope reduction, hard-gate skipping, or a change from formal to draft delivery.
+Confirm high-impact semantics, relationship direction, near-meaning icon substitutions, semantic-ownership changes, license risk, budget overrun, scope reduction, hard-gate skipping, or a change from formal to draft delivery.
 
-Autonomously normalize alignment, spacing, typography, same-family equivalent SVG, line styling, object names, non-semantic connector routing, justified unbound connectors, and obvious technical defects.
+Autonomously normalize alignment, spacing, typography, same-family equivalent SVG, line styling, object names, non-semantic connector routing, justified unbound connectors, and obvious technical defects. Adjust boundaries at any hierarchy level without confirmation when ownership, reading order, and relationship meaning remain unchanged.
 
 Batch questions. Continue independent regions while waiting.
 

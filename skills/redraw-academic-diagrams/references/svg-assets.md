@@ -23,15 +23,44 @@ Matching color alone does not make icons compatible.
 
 ## Search order
 
-1. reuse a validated same-family asset;
-2. find a complete icon in the chosen family;
-3. combine same-family SVG components;
-4. normalize or create a simple SVG under one visual specification;
-5. use a confirmed near-meaning substitute.
+Treat the local library and online sources as one candidate space:
+
+1. define the exact concept, likely ambiguities, visual family, and license constraints;
+2. scan the local library for a validated exact or same-family match;
+3. perform a bounded online search from official or license-clear sources when the local result is not an exact validated match, the concept is ambiguous or high-impact, or the user asks to find or compare an icon;
+4. compare semantic fit before visual fit, then choose the best admissible local or online candidate;
+5. combine same-family SVG components only when a complete icon is unavailable;
+6. normalize or create a simple SVG under one visual specification;
+7. use a confirmed near-meaning substitute only after semantic confirmation.
 
 Stop when the concept is correct, family is compatible, PowerPoint display is stable, provenance is acceptable, and further search adds little value.
 
 Search one page-level family rather than allowing each module to choose independently. Start a separate search only for a genuinely difficult concept.
+
+A validated local exact match may be used immediately when further online search has no practical selection value or the hard time cap makes it wasteful. Do not assume that the local library is exhaustive.
+
+## Local library promotion
+
+Promote an online SVG into the reusable local library only when:
+
+- its license permits the intended storage and reuse;
+- the source page, project, author when available, acquisition date, original hash, and normalized hash are recorded;
+- its concept is reusable beyond one diagram;
+- its visual family and normalization rules are explicit;
+- `inspect_svg.py`, PowerPoint insertion, scaling, recoloring when applicable, save, and reopen pass.
+
+Keep one-off, private, license-uncertain, or technically unstable files in task-local storage.
+
+Classify promoted assets by:
+
+- semantic category, such as actor, process, decision/gate, evidence, resource, state, transition, constraint, or security;
+- concept tags and near-meaning aliases;
+- visual family: line/fill/mixed, grid, stroke width, caps/joins, corner radius, perspective, and whitespace;
+- provenance and license;
+- technical state: raw, normalized, SVG-inspected, and PowerPoint-validated;
+- cautions or misleading interpretations.
+
+Refine the taxonomy when a new asset exposes a useful distinction. Do not create a new category for every single icon.
 
 ## Technical admission
 

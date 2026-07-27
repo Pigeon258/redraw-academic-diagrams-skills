@@ -61,6 +61,8 @@ Never flatten intended editable text, relationships, data, or structures into a 
 - Use limited, explainable colors and sufficient contrast.
 - Standardize repeated borders, radii, padding, line styles, and spacing.
 - Keep primary reading direction obvious and connector paths distinguishable.
+- Keep every text box and semantic icon clear of solid container borders, dividers, and relationship lines.
+- When repairing a collision, preserve the object's semantic region, module ownership, adjacency, and relationship meaning. Adjust region, module, submodule, or handoff boundaries when that produces the correct semantic and visual result; no boundary level is inherently fixed.
 - Preserve macro regions, relative module relationships, confirmed semantic colors, and the source's core visual language.
 - Improve non-semantic typography, spacing, icon consistency, line widths, and routing when useful.
 

@@ -2,6 +2,14 @@
 
 ## 2026-07-27
 
+### `redraw-academic-diagrams` 1.2.0
+
+- Adds a recommended hierarchical element index and PowerPoint object-name map for iterative feedback and editor handoff.
+- Prohibits text/icon intersections with solid borders, dividers, and relationship lines while requiring collision repair to preserve semantic ownership and adjacency.
+- Treats region, module, submodule, and handoff boundaries as adjustable layout variables rather than fixed constraints.
+- Requires enlarged review of edited areas and adjacent boundary strips because full-page renders can hide small intersections.
+- Expands SVG sourcing from a local-only assumption to bounded local-plus-online comparison and defines reusable-asset promotion, provenance, validation, and classification rules.
+
 ### `redraw-academic-diagrams` 1.1.0
 
 - Merges the retired fast skill's one-candidate, compact-planning, verified-method reuse, bounded asset search, single integration, combined QA, fixlist, and targeted-feedback advantages into the main workflow.

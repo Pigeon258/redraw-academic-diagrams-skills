@@ -27,7 +27,7 @@ Escalate repeated or systemic `MINOR` findings to `MAJOR`.
 - HG-04: every confirmed region-level and module-level relationship is present, and each uses the correct native single connector object, endpoints, level, and direction.
 - HG-05: Microsoft PowerPoint opens, saves, reopens, and edits the file without repair.
 - HG-06: applicable SVG icons form a compatible, technically stable, traceable asset system.
-- HG-07: the diagram is readable at page and detail level without semantic visual ambiguity.
+- HG-07: the diagram is readable at page and detail level without semantic visual ambiguity, including no unintended text/icon intersection with solid borders, dividers, or relationship lines.
 - HG-08: the delivery is complete, clean, and free of temporary or mismatched artifacts.
 
 Use “not applicable” only with a concrete reason.
@@ -68,6 +68,10 @@ Use human judgment for target semantics, icon meaning, grouping convenience, vis
 Before declaring HG-02 or HG-04 passed, compare a relationship inventory against the reference at two levels: transitions between major regions and connections between modules. A clean OOXML connector report cannot detect a missing source relationship.
 
 At enlarged view, inspect composite SVG icons for transparent overlap leakage. A base line or bar showing through an overlay badge is a visible construction defect even when both source assets are valid SVG.
+
+At 200–300% equivalent zoom, inspect text and icons against solid module borders, region borders, dividers, and connectors. Include the edited scope and adjacent “unchanged” boundary strips. Full-page renders and generic overflow checks can hide one- to three-point intersections.
+
+When a collision exists, first verify semantic ownership and adjacency. Expand or move boundaries at any hierarchy level when useful; do not fix geometry by moving a label or icon into the wrong region or by weakening its relationship to the concept it describes.
 
 ## Minimum evidence
 
