@@ -65,6 +65,7 @@ Skip W2 only when the same method has reliable historical evidence. Treat W7 as 
 - Use the installed Presentations skill's `build.mjs` / `@oai/artifact-tool` workflow as the default primary builder.
 - Use PowerPoint COM only for necessary grouping, connector binding, targeted repair, save/reopen, and real edit validation.
 - Direct PowerPoint COM construction is an allowed fallback when Artifact Tool is unavailable, an existing deck must be edited, or native connector behavior materially lowers time.
+- Treat Artifact Tool re-export of an imported or grouped deck as a high-risk transformation. Compare pre/post group counts, names, and lock findings; if re-export flattens semantic groups or adds `noGrp`, keep the pre-export PowerPoint-native candidate or repair and fully revalidate a copy.
 - Record the primary builder, PowerPoint postprocessing, fallback reason, and tool delays. Never let a fallback silently waive SVG, grouping, connector, or editability rules.
 - Treat timing from different builder toolchains as confounded unless the comparison controls for the toolchain.
 

@@ -8,7 +8,7 @@ Two Codex skills for rebuilding non-editable academic architecture diagrams, wor
 
 Quality-baseline workflow for formal candidates. It prioritizes semantic completeness, practical editability, coherent SVG assets, native connectors, PowerPoint validation, and traceable QA.
 
-Current version: **1.0.0**
+Current version: **1.0.1**
 
 ### `redraw-academic-diagrams-fast`
 

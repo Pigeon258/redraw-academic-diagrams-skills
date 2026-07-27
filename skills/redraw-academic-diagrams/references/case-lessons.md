@@ -8,6 +8,19 @@ A deck can contain many selectable native objects and still be difficult to edit
 
 Some imported or generated graphical objects carry `noGrp` or related DrawingML restrictions. The icon may move normally but prevent a containing semantic module from grouping. Inspect the OOXML and test the actual group operation.
 
+## Artifact Tool re-export can flatten groups and add `noGrp`
+
+In one validated Windows/PowerPoint case with `@oai/artifact-tool` 2.8.31, importing and re-exporting a grouped PPTX flattened six semantic groups into 84 top-level objects and added 137 `noGrp="1"` attributes across 14 XML parts. Deterministic inspection reported 71 lock risks.
+
+Deleting only the unintended `noGrp` attributes from a temporary copy reduced the lock findings to zero and allowed three loose objects to be grouped, moved, saved, and reopened in PowerPoint. It did not reconstruct the six lost semantic group boundaries. Therefore:
+
+- compare group counts, important names, locks, and edit tasks before and after every Artifact Tool re-export of an imported/grouped deck;
+- do not select the re-exported file when its semantic grouping regresses;
+- prefer the pre-export PowerPoint-native candidate when it retains the verified groups and connectors;
+- if stripping `noGrp`, operate on a copy, reconstruct lost groups explicitly, and rerun structural inspection plus real PowerPoint edit tests.
+
+A PowerPoint-native candidate is the PPTX last saved directly by Microsoft PowerPoint or PowerPoint COM after construction and grouping, before another import/export tool rewrites its OOXML. It remains an editable PPTX; “native” identifies the final writer and preserved PowerPoint object model, not a screenshot or a claim that every object was created manually.
+
 ## Binding is conditional
 
 Binding is valuable when a relationship should follow a moving module and PowerPoint keeps the intended route. Binding is harmful when two straight parallel arrows become slanted or awkward. In that case, preserve one straight unbound arrow object.
