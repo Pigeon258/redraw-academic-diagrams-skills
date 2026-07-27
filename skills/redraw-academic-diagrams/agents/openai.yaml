@@ -1,7 +1,7 @@
 interface:
   display_name: "可编辑科研图重绘主版本"
-  short_description: "当前持续维护的科研图重绘主版本，支持快速、标准与精修交付"
-  default_prompt: "Use $redraw-academic-diagrams 将我提供的科研架构图、流程图或系统图按所需的快速、标准或精修模式重绘为易编辑的 Microsoft PowerPoint。"
+  short_description: "严格科研图重绘主版本，自动选择默认或30分钟内快速预设"
+  default_prompt: "Use $redraw-academic-diagrams 按我明确指定的 DEFAULT 或 FAST 预设重绘科研图；若未指定，则在硬时间预算不超过 30 分钟时采用 FAST，否则采用 DEFAULT。"
 
 policy:
   allow_implicit_invocation: true

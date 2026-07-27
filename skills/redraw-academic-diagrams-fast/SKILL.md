@@ -1,6 +1,6 @@
 ---
 name: redraw-academic-diagrams-fast
-description: Retired and paused fast field-trial skill for editable academic PowerPoint redraws. Do not use it for new work or continue feature development. Redirect every fast, standard, or polished redraw request to the actively maintained redraw-academic-diagrams main skill.
+description: Retired and paused fast field-trial skill for editable academic PowerPoint redraws. Do not use it for new work or continue feature development. Redirect every redraw request to the actively maintained redraw-academic-diagrams main skill, using its DEFAULT or FAST preset.
 ---
 
 # Fast Redraw Academic Diagrams
@@ -17,7 +17,7 @@ For any request that would previously have used this skill:
 
 1. Stop before starting the redraw.
 2. Use `redraw-academic-diagrams`.
-3. Select fast delivery in the main skill when first-pass speed is the priority.
+3. Select the main skill's `FAST` preset when first-pass speed is the priority; without an explicit choice, its 30-minute budget rule selects the preset.
 4. Preserve the archived files for history and field-comparison context.
 
 Modify this archive only for a critical security, privacy, licensing, or archival-integrity correction. Put all normal improvements into `redraw-academic-diagrams`.

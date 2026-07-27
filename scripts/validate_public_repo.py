@@ -94,10 +94,23 @@ def privacy_scan() -> list[str]:
 
 
 def validate_skill_lifecycle() -> list[str]:
-    """验证主版本可用、fast 归档不可被隐式调用。"""
+    """验证主版本预设、草稿生命周期和 fast 归档状态。"""
     errors: list[str] = []
-    main_skill = (SKILLS / MAIN_SKILL / "SKILL.md").read_text(encoding="utf-8-sig")
+    main_root = SKILLS / MAIN_SKILL
+    main_skill = (main_root / "SKILL.md").read_text(encoding="utf-8-sig")
     main_agents = (SKILLS / MAIN_SKILL / "agents" / "openai.yaml").read_text(
+        encoding="utf-8-sig"
+    )
+    main_workflow = (main_root / "references" / "workflow.md").read_text(
+        encoding="utf-8-sig"
+    )
+    main_cost = (main_root / "references" / "cost-and-stop.md").read_text(
+        encoding="utf-8-sig"
+    )
+    main_quality = (main_root / "references" / "quality-gates.md").read_text(
+        encoding="utf-8-sig"
+    )
+    main_manifest_script = (main_root / "scripts" / "build_qa_manifest.py").read_text(
         encoding="utf-8-sig"
     )
     retired_skill = (SKILLS / RETIRED_SKILL / "SKILL.md").read_text(
@@ -110,6 +123,17 @@ def validate_skill_lifecycle() -> list[str]:
         errors.append(f"主版本缺少持续维护标记：{MAIN_SKILL}")
     if "allow_implicit_invocation: true" not in main_agents:
         errors.append(f"主版本未启用隐式调用：{MAIN_SKILL}")
+    if "`DEFAULT` or `FAST`" not in main_skill:
+        errors.append(f"主版本缺少 DEFAULT/FAST 双预设：{MAIN_SKILL}")
+    if "30 minutes or less" not in main_skill or "30 minutes or less" not in main_cost:
+        errors.append(f"主版本缺少 30 分钟自动选择规则：{MAIN_SKILL}")
+    lifecycle_text = "\n".join(
+        (main_skill, main_workflow, main_cost, main_quality, main_manifest_script)
+    )
+    if "WORKING DRAFT" not in lifecycle_text:
+        errors.append(f"主版本缺少 WORKING DRAFT 生命周期：{MAIN_SKILL}")
+    if "UNVERIFIED DRAFT" in lifecycle_text:
+        errors.append(f"主版本仍包含废弃的独立草稿状态：{MAIN_SKILL}")
     if "RETIRED / PAUSED" not in retired_skill:
         errors.append(f"fast 归档缺少停更停用标记：{RETIRED_SKILL}")
     if "allow_implicit_invocation: false" not in retired_agents:

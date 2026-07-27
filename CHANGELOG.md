@@ -2,6 +2,14 @@
 
 ## 2026-07-27
 
+### `redraw-academic-diagrams` 1.1.0
+
+- Merges the retired fast skill's one-candidate, compact-planning, verified-method reuse, bounded asset search, single integration, combined QA, fixlist, and targeted-feedback advantages into the main workflow.
+- Defines two presets: explicit user choice wins; otherwise a hard budget of 30 minutes or less selects `FAST`, and every other case selects `DEFAULT`.
+- Requires every prototype, partial build, review copy, and pre-freeze candidate to remain `WORKING DRAFT`.
+- Allows only a frozen candidate with matching artifacts and applicable checks to be presented as the final adoptable version.
+- Keeps strict hard gates and review rules while making rapid editable iteration a central principle.
+
 ### Repository lifecycle
 
 - Retires and pauses `redraw-academic-diagrams-fast` at its final frozen version, 0.1.0.

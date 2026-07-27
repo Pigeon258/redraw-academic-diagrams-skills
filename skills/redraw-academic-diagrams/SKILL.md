@@ -1,6 +1,6 @@
 ---
 name: redraw-academic-diagrams
-description: Actively maintained main skill for redrawing PNG, JPG, screenshots, or other non-editable academic architecture diagrams, workflow diagrams, and system diagrams into editable Microsoft PowerPoint files. Use when Codex needs fast, standard, or polished reconstruction, revision, or evaluation with editable text, semantic groups, native connectors, SVG icon consistency, editable charts, and iteration-ready structure.
+description: "Actively maintained main skill for redrawing PNG, JPG, screenshots, or other non-editable academic architecture diagrams, workflow diagrams, and system diagrams into editable Microsoft PowerPoint files. Use for strict, iteration-ready reconstruction, revision, or evaluation with two presets: user-selected DEFAULT or FAST; when the user does not choose, use FAST for a time budget of 30 minutes or less and DEFAULT otherwise. Keep every pre-final version as WORKING DRAFT."
 ---
 
 # Redraw Academic Diagrams
@@ -9,7 +9,7 @@ description: Actively maintained main skill for redrawing PNG, JPG, screenshots,
 
 Convert a non-editable research diagram into a clear Microsoft PowerPoint graphic model that a later editor can revise at semantic-module and element level. Treat the source image as a reference, not an unquestionable semantic truth. Optimize real editing experience within the approved time budget.
 
-This is the actively maintained and recommended skill. For speed-first work, select fast delivery in this workflow instead of using the retired `redraw-academic-diagrams-fast` skill.
+This is the actively maintained and recommended skill. Keep a strict construction and QA contract while treating rapid editable iteration as a central operating principle: build one useful candidate early, preserve accepted regions, apply feedback locally, and avoid repeated whole-page work.
 
 Use the installed Presentations skill for PPTX creation, editing, rendering, and artifact delivery. Apply this skill for diagram-specific semantics, object representation, grouping, connectors, SVG assets, quality gates, and iteration.
 
@@ -19,29 +19,38 @@ Target Microsoft PowerPoint. Do not claim WPS compatibility unless the user expl
 
 1. Inspect every source image, PPTX, screenshot, note, and requested modification.
 2. Confirm the intended diagram and output scope.
-3. Choose fast, standard, or polished delivery; default to standard.
-4. Decide whether the target is a formal candidate, fast iterative delivery, `WORKING DRAFT`, or `UNVERIFIED DRAFT`.
-5. Preserve source files and previously accepted versions.
-6. Batch high-impact semantic questions; continue independent regions while waiting.
-7. Use short working notes rather than creating long planning documents for a simple task.
-8. Before drawing, inventory every visible semantic relationship by source, target, direction, level, and connector shape. Keep region-level arrows even when module-level arrows appear to express similar flow.
+3. Select `DEFAULT` or `FAST`. Honor an explicit user choice first. Without one, select `FAST` when the approved hard time budget is 30 minutes or less; otherwise select `DEFAULT`, including when no budget is given.
+4. Record the preset, estimate, hard cap, P1 scope, and cancellable P3/P4 work.
+5. Mark every prototype, partial build, review copy, and pre-freeze candidate as `WORKING DRAFT`. Do not use another draft state.
+6. Preserve source files and previously accepted versions.
+7. Batch high-impact semantic questions; continue independent regions while waiting.
+8. Use compact working notes. Inventory every visible semantic relationship by source, target, direction, level, and connector shape, but do not separately inventory decorative micro-elements unless they affect layout.
+9. Build one candidate path. Do not create alternatives unless the user requests them or the current method fails.
 
 Read [references/workflow.md](references/workflow.md) and [references/product-rules.md](references/product-rules.md) before decomposing a new diagram.
+
+## Presets
+
+`DEFAULT` is the strict default preset. Use the complete applicable construction, semantic, asset, editability, PowerPoint, visual, and evidence gates. Target stable formal `PASS`; treat `PASS—POLISHED` as an optional finish target, not a third preset.
+
+`FAST` is the time-boxed preset. Reuse verified methods and one coherent SVG family, prototype only the smallest unfamiliar high-risk slice, stop open-ended search and optional polish early, integrate once, run one combined minimum-complete QA pass, and return a concise fixlist when appropriate. Keep P0/P1, every applicable hard gate, core edit tests, PowerPoint open/save/reopen, candidate-preview identity, and honest delivery labels.
+
+The explicit user choice always overrides the automatic time-budget rule. A later budget change does not override a previously explicit choice unless the user changes the preset.
 
 ## Core Workflow
 
 | Stage | Action |
 |---|---|
-| W0 | Define source, scope, platform, delivery state, and time cap |
+| W0 | Define source, scope, platform, preset, time cap, and `WORKING DRAFT` state |
 | W1 | Decompose regions, modules, elements, semantics, and object representations |
 | W2 | Prototype only unproven high-risk SVG, grouping, connector, or chart methods |
 | W3 | Search assets and build independently editable semantic modules |
-| W4 | Integrate the page, cross-module connectors, layers, spacing, and names |
+| W4 | Integrate one candidate page, cross-module connectors, layers, spacing, and names |
 | W5 | Run deterministic checks, real PowerPoint edit tasks, and one integrated review |
-| W6 | Freeze one candidate, generate the matching preview and evidence, then deliver |
-| W7 | Classify feedback as local, structural, or global and return to the affected stage |
+| W6 | Freeze the final adoptable candidate, generate matching preview and evidence, then deliver |
+| W7 | Return a changed candidate to `WORKING DRAFT`, repair only affected scope, recheck, and refreeze |
 
-Skip W2 only when the same method has reliable historical evidence. Treat W7 as a normal iteration loop, not automatic evidence that the first pass failed.
+Skip W2 only when the same method has reliable historical evidence. In `FAST`, prototype the smallest representative slice and change method quickly after repeated failure. Treat W7 as a normal iteration loop, not automatic evidence that the first pass failed.
 
 ## Non-negotiable Rules
 
@@ -50,7 +59,7 @@ Skip W2 only when the same method has reliable historical evidence. Treat W7 as 
 - Keep text, containers, data structures, relationships, and changeable geometry as native objects.
 - Use SVG for atomic icons whose internal structure a later editor will not modify.
 - Once a page adopts SVG icons, use SVG for every semantic icon and keep one compatible visual family.
-- Fast mode does not waive the applicable SVG/asset gate. If compliant atomic SVG icons cannot be completed within the cap, label the result `WORKING DRAFT` instead of silently hand-drawing them or claiming `PASS`.
+- `FAST` does not waive the applicable SVG/asset gate. If compliant atomic SVG icons cannot be completed within the cap, keep the result `WORKING DRAFT` instead of silently hand-drawing them or claiming `PASS`.
 - Do not replace editable charts or per-bar/per-node structures with screenshots or monolithic SVG.
 - Group each semantic module for whole-module movement while preserving useful group-internal editing.
 - Keep cross-module connectors outside individual module groups.
@@ -60,6 +69,8 @@ Skip W2 only when the same method has reliable historical evidence. Treat W7 as 
 - Represent one continuous folded, feedback, or routed relationship with one native elbow connector.
 - Leave a connector unbound when binding harms the intended straight route, but never simulate one relationship with several lines.
 - Never overwrite source files, user-adjusted files, or delivered versions.
+- Keep every version `WORKING DRAFT` until W6 freezes a final adoptable candidate whose applicable checks and matching artifacts are complete.
+- Return any post-freeze edit to `WORKING DRAFT` until the affected checks pass and the new candidate is frozen.
 - Stop when the approved state and quality threshold are met; do not continue low-value polishing.
 
 ## Build Toolchain
@@ -102,7 +113,9 @@ Scripts verify deterministic facts only. A clean script result does not replace 
 
 ## Quality and Delivery
 
-For a formal `PASS`:
+Before W6, record QA findings provisionally but keep the artifact state `WORKING DRAFT`. Only the frozen W6 output may be presented as a final adoptable candidate.
+
+For a formal `PASS` final candidate:
 
 - all applicable hard gates pass;
 - Q1 through Q6 are at least 2;
@@ -111,9 +124,9 @@ For a formal `PASS`:
 - the PPTX, preview, and minimum evidence identify the same candidate.
 - every applicable asset gate and edit task has an explicit result; never use the caller-asserted manifest state as proof by itself.
 
-Use `CONDITIONAL` only for an explicitly accepted non-hard deviation after every hard gate passes. Use `WORKING DRAFT` or `UNVERIFIED DRAFT` when scope or checks are incomplete. Never label an unverified requirement as passed.
+Use `CONDITIONAL` only for an explicitly accepted non-hard deviation after every hard gate passes. Keep scope-incomplete, check-incomplete, blocked, or unverified outputs as `WORKING DRAFT` and list the gap. Never label an unverified requirement as passed.
 
-For fast iterative delivery, also report a separate practical result:
+For `FAST`, also report a separate practical result on the frozen final candidate:
 
 - `FAST PASS` when formal `PASS` is already met;
 - `FAST PASS WITH FIXLIST` when only a small number of non-systemic, obvious, local issues remain that a normal editor can fix in about three minutes without semantic reinterpretation or cascading rework, while core editability and PowerPoint usability pass;

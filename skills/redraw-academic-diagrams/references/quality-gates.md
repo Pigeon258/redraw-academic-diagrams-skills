@@ -1,5 +1,13 @@
 # Quality Gates
 
+## Artifact lifecycle
+
+- Label every prototype, partial build, review copy, W4 integration, and W5 candidate `WORKING DRAFT`.
+- Record incomplete or unrun checks as unverified items under `WORKING DRAFT`; do not use another draft state.
+- Treat W5 scores and gate results as provisional while the artifact remains `WORKING DRAFT`.
+- Present a version as the final adoptable candidate only after W6 freezes the matching PPTX, preview, and minimum evidence and the applicable formal or practical adoption criteria pass.
+- Return every post-freeze edit to `WORKING DRAFT` until the affected checks pass and W6 freezes the new candidate.
+
 ## Defect levels
 
 - `BLOCKER`: work cannot continue or be evaluated without user input, an external resource, or a recoverable base file.
@@ -86,13 +94,17 @@ Do not record full video, repetitive screenshots, or complete XML dumps by defau
 
 Skipping a required check never becomes “passed.” A user may end work while accepting unverified risk, but the result remains a draft or non-pass state.
 
-For fast or iterative work, record a separate practical-delivery result:
+These QA results do not override artifact lifecycle: before W6, the version is still `WORKING DRAFT` even if provisional checks indicate `PASS`.
+
+For `FAST`, record a separate practical-delivery result:
 
 - formal `PASS` → `FAST PASS`;
 - formal non-pass caused only by a small number of non-systemic `USER-FIXABLE` known issues, with core edits and PowerPoint usability passing → `FAST PASS WITH FIXLIST`;
 - blocker, unresolved high-impact semantics, core edit failure, technical failure, systemic defect, or other major → `FAST-NOT-ACCEPTABLE`.
 
 For `FAST PASS WITH FIXLIST`, record the object, issue, suggested edit, and estimated user repair time. Do not present it as formal `PASS`.
+
+A frozen `FAST PASS WITH FIXLIST` candidate may be presented as practically adoptable only when every applicable hard gate, core edit, PowerPoint usability check, candidate-preview identity check, and non-user-fixable requirement passes. Otherwise keep it `WORKING DRAFT`.
 
 ## Recheck scope
 

@@ -22,7 +22,6 @@ ALLOWED_STATES = {
     "PASS",
     "PASS—POLISHED",
     "WORKING DRAFT",
-    "UNVERIFIED DRAFT",
 }
 ALLOWED_PRACTICAL_STATES = {
     "FAST PASS",
@@ -118,6 +117,22 @@ def main() -> int:
     if args.practical_state == "FAST PASS WITH FIXLIST" and not args.fix_item:
         parser.error("FAST PASS WITH FIXLIST 至少需要一个 --fix-item。")
 
+    adoptable_claim = args.state in {"CONDITIONAL", "PASS", "PASS—POLISHED"} or (
+        args.practical_state in {"FAST PASS", "FAST PASS WITH FIXLIST"}
+    )
+    artifact_lifecycle = (
+        "FINAL ADOPTABLE CANDIDATE" if adoptable_claim else "WORKING DRAFT"
+    )
+    if args.state == "WORKING DRAFT" and args.practical_state in {
+        "FAST PASS",
+        "FAST PASS WITH FIXLIST",
+    }:
+        parser.error("WORKING DRAFT 不能声明为可采用的快速交付结论。")
+    if adoptable_claim and not args.preview:
+        parser.error("最终可采用候选必须提供匹配预览。")
+    if adoptable_claim and args.unverified:
+        parser.error("最终可采用候选不能包含未验证事项；请改为 WORKING DRAFT。")
+
     if not args.pptx.is_file():
         print("脚本错误：候选 PPTX 不存在。", file=sys.stderr)
         return 2
@@ -136,6 +151,7 @@ def main() -> int:
         report: dict[str, Any] = {
             "tool": "build_qa_manifest",
             "generated_utc": datetime.now(timezone.utc).isoformat(),
+            "artifact_lifecycle": artifact_lifecycle,
             "state_asserted_by_caller": args.state,
             "practical_state_asserted_by_caller": args.practical_state,
             "user_fixable_items": args.fix_item,
@@ -159,13 +175,14 @@ def main() -> int:
         return 2
 
     print(f"QA 清单已生成：{args.output.resolve()}")
+    print(f"产物生命周期：{artifact_lifecycle}")
     print(f"候选状态由调用者声明：{args.state}")
     if args.practical_state:
         print(f"快速实际交付结论由调用者声明：{args.practical_state}")
     if not args.preview:
         print("[WARNING] 未提供预览。")
-    if args.state in {"PASS", "PASS—POLISHED", "CONDITIONAL"} and args.unverified:
-        print("[WARNING] 正式状态仍包含未验证事项，请人工复核状态是否合理。")
+    if args.state == "WORKING DRAFT" and not args.unverified:
+        print("[WARNING] WORKING DRAFT 未记录未验证事项或剩余工作。")
     return 0
 
 

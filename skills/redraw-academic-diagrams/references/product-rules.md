@@ -76,4 +76,8 @@ Never flatten intended editable text, relationships, data, or structures into a 
 
 ## Delivery
 
-Do not overwrite sources or accepted versions. A formal delivery contains the PPTX and matching full-page preview. Add a short note only for approved exceptions, unresolved semantics, asset restrictions, or unverified work.
+Do not overwrite sources or accepted versions. Keep every prototype, partial build, review copy, and pre-freeze candidate as `WORKING DRAFT`; list any unverified item under that state. Only W6 may freeze a final adoptable candidate after applicable checks and candidate-preview identity are complete.
+
+Deliver one PPTX and one matching full-page preview by default. For `FAST`, add a concise fixlist only when every item qualifies as `USER-FIXABLE`. Add a short note only for approved exceptions, unresolved semantics, asset restrictions, or unverified work.
+
+Any post-freeze edit creates a new `WORKING DRAFT` until affected checks pass and the candidate is frozen again.
