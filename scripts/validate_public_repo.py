@@ -11,6 +11,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
+MAIN_SKILL = "redraw-academic-diagrams"
+RETIRED_SKILL = "redraw-academic-diagrams-fast"
 NAME_RE = re.compile(r"^[a-z0-9-]{1,64}$")
 PRIVATE_PATTERNS = {
     "windows_absolute_path": re.compile(
@@ -91,12 +93,36 @@ def privacy_scan() -> list[str]:
     return errors
 
 
+def validate_skill_lifecycle() -> list[str]:
+    """验证主版本可用、fast 归档不可被隐式调用。"""
+    errors: list[str] = []
+    main_skill = (SKILLS / MAIN_SKILL / "SKILL.md").read_text(encoding="utf-8-sig")
+    main_agents = (SKILLS / MAIN_SKILL / "agents" / "openai.yaml").read_text(
+        encoding="utf-8-sig"
+    )
+    retired_skill = (SKILLS / RETIRED_SKILL / "SKILL.md").read_text(
+        encoding="utf-8-sig"
+    )
+    retired_agents = (
+        SKILLS / RETIRED_SKILL / "agents" / "openai.yaml"
+    ).read_text(encoding="utf-8-sig")
+    if "actively maintained" not in main_skill:
+        errors.append(f"主版本缺少持续维护标记：{MAIN_SKILL}")
+    if "allow_implicit_invocation: true" not in main_agents:
+        errors.append(f"主版本未启用隐式调用：{MAIN_SKILL}")
+    if "RETIRED / PAUSED" not in retired_skill:
+        errors.append(f"fast 归档缺少停更停用标记：{RETIRED_SKILL}")
+    if "allow_implicit_invocation: false" not in retired_agents:
+        errors.append(f"fast 归档未禁用隐式调用：{RETIRED_SKILL}")
+    return errors
+
+
 def main() -> int:
     """执行全部公开仓库检查。"""
     errors: list[str] = []
     expected = {
-        "redraw-academic-diagrams",
-        "redraw-academic-diagrams-fast",
+        MAIN_SKILL,
+        RETIRED_SKILL,
     }
     actual = {path.name for path in SKILLS.iterdir() if path.is_dir()}
     if actual != expected:
@@ -104,6 +130,7 @@ def main() -> int:
     for path in sorted(SKILLS.iterdir()):
         if path.is_dir():
             errors.extend(validate_skill(path))
+    errors.extend(validate_skill_lifecycle())
     errors.extend(privacy_scan())
     for path in ROOT.rglob("*.py"):
         try:

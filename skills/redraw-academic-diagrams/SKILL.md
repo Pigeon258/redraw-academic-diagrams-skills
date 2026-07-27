@@ -1,6 +1,6 @@
 ---
 name: redraw-academic-diagrams
-description: Redraw PNG, JPG, screenshots, or other non-editable academic architecture diagrams, workflow diagrams, and system diagrams into editable Microsoft PowerPoint files. Use when Codex needs to reconstruct, revise, or evaluate a research diagram with editable text, semantic groups, native connectors, SVG icon consistency, editable charts, and iteration-ready structure.
+description: Actively maintained main skill for redrawing PNG, JPG, screenshots, or other non-editable academic architecture diagrams, workflow diagrams, and system diagrams into editable Microsoft PowerPoint files. Use when Codex needs fast, standard, or polished reconstruction, revision, or evaluation with editable text, semantic groups, native connectors, SVG icon consistency, editable charts, and iteration-ready structure.
 ---
 
 # Redraw Academic Diagrams
@@ -8,6 +8,8 @@ description: Redraw PNG, JPG, screenshots, or other non-editable academic archit
 ## Mission
 
 Convert a non-editable research diagram into a clear Microsoft PowerPoint graphic model that a later editor can revise at semantic-module and element level. Treat the source image as a reference, not an unquestionable semantic truth. Optimize real editing experience within the approved time budget.
+
+This is the actively maintained and recommended skill. For speed-first work, select fast delivery in this workflow instead of using the retired `redraw-academic-diagrams-fast` skill.
 
 Use the installed Presentations skill for PPTX creation, editing, rendering, and artifact delivery. Apply this skill for diagram-specific semantics, object representation, grouping, connectors, SVG assets, quality gates, and iteration.
 

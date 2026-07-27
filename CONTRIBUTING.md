@@ -2,7 +2,9 @@
 
 ## Scope
 
-Contributions should improve editable Microsoft PowerPoint redraws of academic architecture diagrams, workflows, and system diagrams.
+Contributions should improve the actively maintained `redraw-academic-diagrams` skill for editable Microsoft PowerPoint redraws of academic architecture diagrams, workflows, and system diagrams.
+
+`redraw-academic-diagrams-fast` is a frozen archive. Do not add features or workflow changes to it. Only critical security, privacy, licensing, or archival-integrity corrections are in scope.
 
 ## Rule admission
 
